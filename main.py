@@ -4,12 +4,11 @@ import warnings
 import os
 import datetime as dt
 import streamlit as st
-warnings.simplefilter("ignore", UserWarning)
 
+warnings.simplefilter("ignore", UserWarning)
 
 # Configurar a página
 st.set_page_config(layout="wide")
-
 
 # Função para carregar os dados
 @st.cache_resource
@@ -37,7 +36,6 @@ st.markdown(
 
 st.markdown("<h1 class='title'>Dashboard de Auditoria de Pedidos</h1>", unsafe_allow_html=True)
 
-
 # Menu lateral para filtros
 st.sidebar.title('Filtros')
 
@@ -48,7 +46,6 @@ valores_filtro_1 = st.sidebar.multiselect(f'Selecione os Valores para {coluna_fi
 # Aplicar o filtro
 if valores_filtro_1:
     df = df[df[coluna_filtro_1].isin(valores_filtro_1)]
-
 
 # Adicionar CSS para ajustar a largura da tabela
 st.markdown(
@@ -64,4 +61,3 @@ st.markdown(
 
 # Exibir os dados em uma tabela interativa com tamanho ajustado
 st.dataframe(df, height=600)
-
