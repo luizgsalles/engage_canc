@@ -13,7 +13,7 @@ st.set_page_config(layout="wide")
 # Função para carregar os dados
 @st.cache_resource
 def load_data():
-    return pd.read_excel('db_2024-07-29_15h48.xlsx')
+    return pd.read_excel('db_2024-07-30_11h48.xlsx')
 
 # Função para salvar os dados
 def save_data(df):
